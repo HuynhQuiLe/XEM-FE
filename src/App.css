@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    font-family: "Montserrat", sans-serif !important;
+    @apply bg-master_bg text-black text-[16px] max-w-[1920px] m-auto px-[52px] 
+}
+
+body.no-scroll {
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.button {
+    @apply  px-[24px] text-[16px] rounded-[8px] h-[48px]
+}
+
+.link-text {
+    @apply w-fit relative font-semibold cursor-pointer leading-[150%]
+    after:content-[""] after:absolute after:w-full after:h-[2px] after:bg-[#acacac] after:left-0 after:bottom-0 
+    before:absolute before:content-[""] before:w-0 before:h-[2px] before:transition-all before:ease-in-out before:duration-300 before:bg-black hover:before:w-full before:bottom-0 before:z-10
+  }
+  
+
+.label-text {
+    @apply block text-sub_menu_index text-[12px] uppercase font-light mb-[8px]
+}
+
+.input-default {
+    @apply w-full px-[16px] h-[48px] font-light outline-none border-b-[1px] border-gray  focus:border-black transition-default
+}
+  
+.transition-default {
+    transition: all .3s ease-in-out;
+  }
+
+.dot-line {
+background-image: linear-gradient(to right, rgb(49, 34, 34) 0 10%, rgba(255, 255, 255, 0) 10%);
+background-position: top;
+background-size: 8px 1px;
+background-repeat: repeat-x;
+}
+

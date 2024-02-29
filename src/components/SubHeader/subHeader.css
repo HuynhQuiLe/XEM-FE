@@ -1,0 +1,22 @@
+.sub-menu-dot {
+    position: relative;
+    background-image: linear-gradient(to bottom, #7a7a7a 0 10%, rgba(255, 255, 255, 0) 10%);
+    background-position: left top;
+    background-repeat: repeat-y;
+    background-size: 1px 8px;
+}
+  
+
+.show-on-begin {
+    animation: show-on-begin 0.7s linear  alternate;
+  }
+  
+  @keyframes show-on-begin {
+    0% {
+      bottom: -100%
+    }
+  
+    100% {
+      bottom: 0
+    }
+  }
