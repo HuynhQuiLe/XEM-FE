@@ -15,6 +15,7 @@ import Setting from './pages/Setting/Setting'
 import PublicProfile from './pages/Setting/PublicProfile/PublicProfile'
 import PersonInfo from './pages/Setting/PersonInfo/PersonInfo'
 import Private from './layouts/Private'
+import Preview from './pages/Preview/Preview'
 
 function App() {
   
@@ -29,6 +30,7 @@ function App() {
           <Route index element={<Home/>} />
           <Route path='danh-gia' element={<Review/>} />
           <Route path='them-review' element={<Private><AddReview/></Private>} />
+          <Route path='preview' element={<Private><Preview/></Private>} />
           <Route path='profile/:url' element={<Private><Profile/></Private>} />
 
           {/* setting */}

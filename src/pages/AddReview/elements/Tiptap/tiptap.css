@@ -1,0 +1,79 @@
+/* Basic editor styles */
+.tiptap {
+      margin-top: 0.75em;
+}
+
+
+
+/* Basic editor styles */
+.tiptap ul, .tiptap ol {
+    padding: 0 1rem;
+}
+
+
+/* Basic editor styles */
+.tiptap h1,
+.tiptap h2,
+.tiptap h3,
+.tiptap h4,
+.tiptap h5,
+.tiptap h6 {
+  line-height: 1.1;
+} 
+
+.tiptapContainer button {
+  @apply px-[10px] py-[5px] border-[1px] border-black rounded-[8px] mr-[10px] mb-[10px] hover:bg-black hover:text-white cursor-pointer transition-all duration-300 ease-in-out
+}
+
+div.tiptap.ProseMirror {
+  @apply  bg-white w-full px-[20px] py-[40px] outline-none border-b-[1px] border-gray focus:border-black transition-all duration-300 ease-in-out
+}
+
+/* Basic editor styles */
+.tiptap code {
+  background-color: rgba(#616161, 0.1);
+  color: #616161;
+} 
+
+
+/* Basic editor styles */
+.tiptap  pre {
+  background: #0D0D0D;
+  color: #FFF;
+  font-family: 'JetBrainsMono', monospace;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.tiptap pre code {
+    color: inherit;
+    padding: 0;
+    background: none;
+    font-size: 0.8rem;
+}
+
+
+
+/* Basic editor styles */
+.tiptap img {
+  max-width: 100%;
+  height: auto;
+}
+
+.tiptap blockquote {
+  padding-left: 1rem;
+  border-left: 2px solid rgba(#0D0D0D, 0.1);
+}
+
+.tiptap hr {
+  border: none;
+  border-top: 2px solid rgba(#0D0D0D, 0.1);
+  margin: 2rem 0;
+}
+
+mark {
+  background-color: #ffe066;
+  border-radius: 0.25em;
+  box-decoration-break: clone;
+  padding: 0.125em 0;
+}
