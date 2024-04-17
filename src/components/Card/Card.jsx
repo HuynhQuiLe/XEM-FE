@@ -1,6 +1,5 @@
 import React from 'react'
-import './card.css'
-import LatestEpisode from '../LatestEpisode/LatestEpisode'
+import LatestEpisode from '../../component/Vendors/LatestEpisode/LatestEpisode'
 
 const Card = ({item, isTrending}) => {
   return (

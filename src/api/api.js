@@ -83,7 +83,8 @@ export const followFilmSer = {
 
 export const notificationSer = {
     getListByUser: () => https_minus.get('notification/get-all-by-user'),
-    getNumberOfNotiByUser: () => https_minus.get('notification/get-number-of-noti-by-user'),
+    getTotalNumberOfNotiByUser: () => https_minus.get('notification/get-total-number-of-noti-by-user'),
+    getNewNumberOfNotiByUser: () => https_minus.get('notification/get-new-number-of-noti-by-user'),
     readNotification: (notification_id) => https_minus.patch(`notification/read/${notification_id}`)
 }
 

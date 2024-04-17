@@ -1,5 +1,4 @@
 import React from 'react'
-import './subHeader.css'
 
 const MainMenu = () => {
   return (

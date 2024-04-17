@@ -1,5 +1,4 @@
 import React from 'react'
-import './LoadingCircle.css'
 
 const SmallLoadingCircle = () => {
   return (

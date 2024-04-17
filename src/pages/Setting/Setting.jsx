@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import {Outlet, useLocation, useNavigate } from 'react-router-dom';
-import './setting.css'
 import { userSer } from '../../api/api';
 import { notify } from '../../utils/notify/notify';
 

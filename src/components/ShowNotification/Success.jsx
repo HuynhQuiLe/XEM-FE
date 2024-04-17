@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import './notification.css'
 
 const Success = () => {
     const {isShow, isHide, message} = useSelector(state => state.notificationSlice)

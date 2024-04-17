@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import './sectionTitle.css'
 
 const SectionTitle = ({subTitle, mainTitle, description}) => {
     useEffect(() => {

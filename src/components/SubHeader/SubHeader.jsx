@@ -1,7 +1,6 @@
 import React, {useEffect, useState } from 'react'
 import MainMenu from './MainMenu'
 import SmallLogo from '../Logo/SmallLogo'
-import './subHeader.css'
 import Home from './elements/Home'
 import { useLocation } from 'react-router-dom'
 import Review from './elements/Review'

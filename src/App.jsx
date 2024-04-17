@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
-import './App.css'
+import './styles/App.css'
+// import './styles/marquee.css'
 import Home from './pages/Home/Home'
 import Main from './layouts/Main'
 import Verification from './pages/Verification/Verification'
@@ -14,7 +15,7 @@ import PublicProfile from './pages/Setting/PublicProfile/PublicProfile'
 import PersonInfo from './pages/Setting/PersonInfo/PersonInfo'
 import Private from './layouts/Private'
 import Details from './pages/Details/Details'
-import SavedFilms from './pages/SavedFilms/SavedFilms'
+import FollowingFilms from './pages/FollowingFilms/FollowingFilms'
 import History from './pages/History/History'
 import AddEpisode from './pages/Setting/AddEpisode/AddEpisode'
 import Add from './pages/Setting/AddFilm/Add'
@@ -42,7 +43,7 @@ function App() {
           </Route>
           {/* phim details */}
           <Route path='chi-tiet/:url/:episode_name?' element={<Details/>} />
-          <Route path='phim-da-luu' element={<SavedFilms/>} />
+          <Route path='phim-da-luu' element={<FollowingFilms/>} />
           <Route path='lich-su' element={<History/>} />
           <Route path='thong-bao' element={<Private><Notification/></Private>} />
         </Route>

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Cover from './Cover'
 import Info from './Info'
-import './details.css'
 import Session from './Session'
 import Episode from './Episode'
 import Comment from './Comment'
