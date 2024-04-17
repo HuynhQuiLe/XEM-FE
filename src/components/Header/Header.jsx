@@ -3,11 +3,12 @@ import User from './elements/User'
 import {useSelector } from 'react-redux'
 import LoginSignupBTN from './elements/LoginSignupBTN'
 import SearchBar from './elements/SearchBar'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import MainLogo from '../Logo/MainLogo'
 
 const Header = () => {
     const navigate = useNavigate()
+    const {pathname} = useLocation() 
     const {token} = useSelector(state => state.authSlice)
     return (
         <>
@@ -21,8 +22,8 @@ const Header = () => {
                     </div>
 
                     <div className='ml-[8px] flex items-center'>
-                        <button className='button bg-black text-white text-nowrap' onClick={() => navigate('/shopping')} >Shop Now</button>
-                        <button className='button bg-transparent text-black border-[1px] border-black text-nowrap ml-[8px]' onClick={() => navigate('/them-review')}>Thêm Review</button>
+                        <button className={`button text-nowrap ${pathname.includes("chi-tiet") ? 'bg-white text-black' : 'bg-black text-white'}`} onClick={() => navigate('/phim-da-luu')} >Phim Đã Lưu</button>
+                        <button className={`button bg-transparent border-[1px]  text-nowrap ml-[8px] ${pathname.includes("chi-tiet") ? 'text-white border-white' :'text-black border-black'}`} onClick={() => navigate('/lich-su')}>Lịch Sử</button>
                     </div>
                 </div>
             </header>

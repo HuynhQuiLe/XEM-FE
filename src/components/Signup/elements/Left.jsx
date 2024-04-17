@@ -1,6 +1,7 @@
 import React from 'react'
 import {setIsOpenedModalLogin} from '../../../redux/modalSlice.js';
 import { useDispatch } from 'react-redux';
+import SmallLogo from '../../Logo/SmallLogo.jsx';
 
 const Left = () => {
     const dispatch = useDispatch()
@@ -8,7 +9,7 @@ const Left = () => {
         <div className='flex-1 p-[50px] bg-login_bg flex flex-col justify-between' >
             <p className='text-[24px] mb-[36px] font-light'>Xin chào!</p>
             <div className='flex items-center justify-center font-semibold'>
-                <img src="/public/img/r.svg" className='w-[100px]' alt="small logo" />
+                <SmallLogo  width={100} />
                 <div className='ml-[20px] w-[162px] h-[162px] rounded-full bg-[#222222] text-[100px] flex items-center justify-center'>
                     <p>👋</p>
                 </div>

@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import './sectionTitle.css'
 
-const SectionTitle = () => {
+const SectionTitle = ({subTitle, mainTitle, description}) => {
+    useEffect(() => {
+        document.querySelector("#mainTitle").innerHTML = mainTitle
+        document.querySelector("#description").innerHTML = description
+    },[])
     return (
         <div>
-            <p className='  font-light text-[16px] leading-[200%] mb-[16px]'>Bình luận</p>
+            <p className='  font-light text-[16px] leading-[200%] mb-[16px]'>{subTitle}</p>
             <div className='flex items-end justify-between'>
-                <h2 className='leading-[120%] text-[45px] font-semibold '>Bạn đang nghĩ gì<br/>
-                    về sản phẩm này.
-                </h2>
-                <p className='font-light text-[16px] leading-[200%]'>Đừng bỏ lỡ những bình luận <strong className='font-semibold'>mới thất</strong> trên <strong className='font-semibold'>reviewer.</strong></p>
+                <h2 className='leading-[120%] text-[45px] font-semibold' id='mainTitle'></h2>
+                <p className='font-light text-[16px] leading-[200%]' id="description"></p>
             </div>
         </div>
     )

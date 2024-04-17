@@ -37,13 +37,13 @@ const ChangePassword = () => {
             <h6 className='text-[20px] font-semibold'>Đổi mật khẩu</h6>
         </div>
         <div className='w-[60%] px-[30px] '>
-            <div className='flex gap-[20px]'>
+            <form className='flex gap-[20px]'>
                 <div className='flex-1'>
                     <div>
                         <label htmlFor="" className='label-text '>mật khẩu mới (*)</label>
                     </div>
                     <div>
-                        <input type="password" value={pass_word} onChange={handleChangePassword} className='input-default' placeholder='Mật khẩu mới'/>
+                        <input type="password" autoComplete="false" value={pass_word} onChange={handleChangePassword} className='input-default' placeholder='Mật khẩu mới'/>
                     </div>
                     {errPass_word && 
                         <div className='pt-[10px]'>
@@ -53,10 +53,10 @@ const ChangePassword = () => {
                 </div>
                 <div className='flex-1'>
                     <div>
-                        <label htmlFor="" className='label-text '>Nhập lại mạt khẩu (*)</label>
+                        <label htmlFor="" className='label-text '>Nhập lại mật khẩu (*)</label>
                     </div>
                     <div>
-                        <input type="password" value={rePass_word} onChange={handleReChangePassword}   className='input-default' placeholder='Nhập lại mật khẩu'/>
+                        <input type="password" autoComplete="false" value={rePass_word} onChange={handleReChangePassword}   className='input-default' placeholder='Nhập lại mật khẩu'/>
                     </div>
                     {errRePass_word && 
                         <div className='pt-[10px]'>
@@ -64,7 +64,7 @@ const ChangePassword = () => {
                         </div>
                     }
                 </div>
-            </div>          
+            </form>          
         </div>
        <SaveBtn pass_word={pass_word} setErrRePass_word= {setErrRePass_word} seterrPass_word={seterrPass_word} rePass_word={rePass_word} errPass_word={errPass_word} errRePass_word={errRePass_word}/>
     </div>

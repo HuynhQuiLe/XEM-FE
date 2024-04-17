@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import {useEffect, useState} from 'react';
 import Avatar from '../../Avatar/Avatar'
-import {userSer } from '../../../api/api';
+import {userSer, notificationSer} from '../../../api/api';
 import { confirmPasswordLocalStorage, notificationLocalStorage, tokenLocalStorage } from '../../../api/localStorage';
 import { setToken } from '../../../redux/authSlice';
 import { notify } from '../../../utils/notify/notify';
@@ -15,6 +15,8 @@ const User = () => {
     const dispatch = useDispatch()
 
     const [url, setUrl] = useState(null)
+    const [noti, setNoti] = useState(0)
+
     useEffect(() => {
         userSer.getUrl()
         .then(({data}) => {
@@ -22,6 +24,12 @@ const User = () => {
         })
         .catch(error => {
             console.log(error)
+        })
+
+        // lay so thong bao moi
+        notificationSer.getNumberOfNotiByUser()
+        .then(({data}) => {
+            setNoti(data.content.new)
         })
     },[])
 
@@ -37,7 +45,10 @@ const User = () => {
 
   return (
     <div className='group relative'>
-        <Avatar size={32} />
+        <div className='relative'>
+            <Avatar size={32} />
+            {noti ? <p className='absolute right-[-25%] top-[-25%] h-[20px] w-[20px] leading-[20px] text-[12px] font-semibold text-center rounded-full bg-sf_bg_dark text-white'>{noti}</p> : null}
+        </div>
         <div className=' absolute top-[100%] z-[2] pt-[12px] bg-transparent transition-default opacity-0 invisible group-hover:opacity-100 group-hover:visible'>
             <div className=' bg-black text-white py-[20px] w-[230px] rounded-[8px] '>
                 <div className='pb-[16px] text-[14px] font-thin border-b-[1px] border-dropdown_user_list'>
@@ -46,7 +57,10 @@ const User = () => {
                 <div className='py-[16px] text-[14px] font-thin border-b-[1px] border-dropdown_user_list'>
                     <p  className='h-[32px] px-[28px] leading-[32px] hover:bg-dropdown_user_list cursor-pointer transition-default' onClick={() => navigate(`/profile/${url}`)}>Profile</p>
                     <p  className='h-[32px] px-[28px] leading-[32px] hover:bg-dropdown_user_list cursor-pointer transition-default'>Collections</p>
-                    <p  className='h-[32px] px-[28px] leading-[32px] hover:bg-dropdown_user_list cursor-pointer transition-default'>Notifications</p>
+                    <div className='h-[32px] px-[28px] leading-[32px] hover:bg-dropdown_user_list cursor-pointer transition-default flex items-center justify-between' onClick={() => navigate(`/thong-bao`)}>
+                        <p>Thông báo</p>
+                        {noti ? <p className='h-[20px] w-[20px] leading-[20px] text-[12px] font-semibold text-center rounded-full bg-white text-black'>{noti}</p> : null}
+                    </div>
                 </div>
                 <div className='text-[14px] font-semibold border-b-[1px] border-dropdown_user_list py-[10px]'>
                     <p className='h-[32px] px-[28px] leading-[32px] hover:bg-dropdown_user_list cursor-pointer transition-default'>Dashboard</p>

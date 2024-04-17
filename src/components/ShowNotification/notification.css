@@ -1,32 +1,32 @@
 .notification-show-effect {
-    animation: notification-show-effect 1s linear  alternate;
+  animation: notification-show-effect 1s linear  alternate;
+}
+
+@keyframes notification-show-effect {
+  0% {
+    bottom: -100%;
+    opacity:0;
   }
-  
-  @keyframes notification-show-effect {
-    0% {
-      bottom: -100%;
-      opacity:0;
-    }
-  
-    100% {
-      bottom: 0;
-      opacity: 1;
-    }
+
+  100% {
+    bottom: 0;
+    opacity: 1;
   }
+}
+
   
-  
-  .notification-hide-effect {
-    animation: notification-hide-effect 1s linear  alternate;
+.notification-hide-effect {
+  animation: notification-hide-effect 1s linear  alternate;
+}
+
+@keyframes notification-hide-effect {
+  0% {
+    bottom: 0;
+    opacity:1;
   }
-  
-  @keyframes notification-hide-effect {
-    0% {
-      bottom: 0;
-      opacity:1;
-    }
-  
-    100% {
-      bottom: -100%;
-      opacity: 0;
-    }
+
+  100% {
+    bottom: -100%;
+    opacity: 0;
   }
+}

@@ -3,8 +3,16 @@ import Close from '../Close/Close'
 import BlackBackground from '../BlackBackground/BlackBackground'
 import Left from './elements/Left'
 import Right from './elements/Right'
+import {useEffect} from 'react';
 
 const Signup = () => {
+  useEffect(() => {
+    document.querySelector('body').classList.add('no-scroll')
+    return () => {
+        document.querySelector('body').classList.remove('no-scroll')
+    }
+  },[])
+
   return (
     <section className='fixed top-0 left-0 z-10 w-[100vw] min-h-[100vh] overflow-scroll flex items-center justify-center'>
         <BlackBackground/>

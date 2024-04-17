@@ -8,14 +8,17 @@ import { useEffect } from 'react'
 import { notificationLocalStorage } from './api/localStorage'
 import { notify } from './utils/notify/notify'
 import LoginAgain from './components/LoginAgain/LoginAgain'
-import AddReview from './pages/AddReview/AddReview'
-import Review from './pages/Review/Review'
 import Profile from './pages/Profile/Profile'
 import Setting from './pages/Setting/Setting'
 import PublicProfile from './pages/Setting/PublicProfile/PublicProfile'
 import PersonInfo from './pages/Setting/PersonInfo/PersonInfo'
 import Private from './layouts/Private'
-import Preview from './pages/Preview/Preview'
+import Details from './pages/Details/Details'
+import SavedFilms from './pages/SavedFilms/SavedFilms'
+import History from './pages/History/History'
+import AddEpisode from './pages/Setting/AddEpisode/AddEpisode'
+import Add from './pages/Setting/AddFilm/Add'
+import Notification from './pages/Notofication/Notification'
 
 function App() {
   
@@ -28,18 +31,20 @@ function App() {
       <Routes>
         <Route path='/' element = {<Main/>}>
           <Route index element={<Home/>} />
-          <Route path='danh-gia' element={<Review/>} />
-          <Route path='them-review' element={<Private><AddReview/></Private>} />
-          <Route path='preview' element={<Private><Preview/></Private>} />
+          {/* profile */}
           <Route path='profile/:url' element={<Private><Profile/></Private>} />
-
           {/* setting */}
           <Route path='settings' element={<Private><Setting/></Private>} >
             <Route path='ho-so' element={<PublicProfile/>}/>
             <Route path='thong-tin-ca-nhan' element={<PersonInfo/>}/>
+            <Route path='them-phim-moi' element={<Add/>}/>
+            <Route path='them-tap-phim' element={<AddEpisode/>}/>
           </Route>
-
-
+          {/* phim details */}
+          <Route path='chi-tiet/:url/:episode_name?' element={<Details/>} />
+          <Route path='phim-da-luu' element={<SavedFilms/>} />
+          <Route path='lich-su' element={<History/>} />
+          <Route path='thong-bao' element={<Private><Notification/></Private>} />
         </Route>
 
        

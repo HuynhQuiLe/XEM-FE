@@ -15,7 +15,7 @@ const DeleteAccount = () => {
                 <p className='link-text' 
                 
                 onClick={()=> 
-                  notify.success('Tính năng đang bão trì.')
+                  notify.success('Tính năng đang bảo trì.')
                 }>Xoá tài khoản</p>
             </div>    
         </div>

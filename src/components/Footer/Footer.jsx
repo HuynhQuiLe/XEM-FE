@@ -1,9 +1,11 @@
 import React from 'react'
 import SmallLogo from '../Logo/SmallLogo'
+import {useLocation} from 'react-router-dom';
 
 const Footer = () => {
+    const {pathname} = useLocation()
   return (
-    <footer className='pt-[80px]'>
+    <footer className='mt-[120px]'>
         <div className='mb-[40px]'>
             <SmallLogo width={36} css={"mb-[30px] h-auto"} />
             <div className='flex justify-between'>
@@ -28,7 +30,7 @@ const Footer = () => {
                     <div className='flex-1'></div>
                 </div>
                 <div className='w-[25%]'>
-                    <div className='bg-cfr_bg w-full py-[32px] flex items-center justify-center rounded-[8px]'>
+                    <div className={`${pathname.includes('chi-tiet') ? 'bg-cfr_bg_dark' :'bg-cfr_bg'} w-full py-[32px] flex items-center justify-center rounded-[8px]`}>
                         <p className='font-[200]'>Next Conference <i className="fa fa-calendar mx-2"></i>  <span className='link-text inline-block'>Amsterdam</span></p>
                     </div>
                 </div>

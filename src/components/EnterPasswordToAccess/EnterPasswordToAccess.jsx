@@ -45,7 +45,6 @@ const EnterPasswordToAccess = () => {
 
         authSer.checkPassword({pass_word})
         .then(({data}) => {
-            console.log(data)
             dispatch(setConfirm(data.content))
             notify.success(data.message)
             confirmPasswordLocalStorage.set(data.content)

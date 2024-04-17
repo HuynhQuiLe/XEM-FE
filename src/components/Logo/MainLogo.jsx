@@ -1,11 +1,15 @@
 import React from 'react'
-import {useNavigate} from 'react-router-dom';
+import {useLocation, useNavigate} from 'react-router-dom';
 
 const MainLogo = () => {
     const navigate = useNavigate()
+    const {pathname} = useLocation()
+    let src = ""
+    pathname.includes('chi-tiet') ? src = '/img/XEM-white.svg' : src = "/img/XEM.svg"
     return (
         <div onClick={() => navigate('/')}>
-            <img src="/img/reviewer.svg" className='w-[200px] h-auto cursor-pointer' alt="logo" />               
+            <img src={src} 
+            className='w-[80px] h-auto cursor-pointer' alt="logo" />               
         </div>
     )
 }

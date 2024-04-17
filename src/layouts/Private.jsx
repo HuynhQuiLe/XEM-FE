@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import { tokenLocalStorage } from "../api/localStorage";
+import { notificationLocalStorage, tokenLocalStorage } from "../api/localStorage";
 import { notify } from "../utils/notify/notify";
 
 const Private = ({ children }) => {
-  let  user  = tokenLocalStorage.get()
+  let  user  = tokenLocalStorage.get() ? true : false
   useEffect(() => {
     if (!user) {
-      notify.success('Vui lòng đăng nhập để tiếp tục')
+      notificationLocalStorage.set('Vui lòng đăng nhập để tiếp tục')
       return history.back()
     }
    

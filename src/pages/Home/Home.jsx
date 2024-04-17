@@ -1,15 +1,16 @@
 import React from 'react'
-import MasterText from './elements/MasterText'
-import Marquee from './elements/Marquee'
-import ROTD from './elements/ROTD'
+import POTD from './POTD/POTD'
+import Trending from './Trending/Trending'
+import Latest from './Latest/Latest'
+import Honor from './Honor/Honor'
 
 const Home = () => {
   return (
-    <div className='mt-[55px]'>
-      <MasterText/>
-      <Marquee/>
-      <ROTD/>
-      <div className='h-[100vh]'></div>
+    <div>
+      <POTD/>
+      <Latest/>
+      <Trending />
+      <Honor/>
     </div>
 
   )

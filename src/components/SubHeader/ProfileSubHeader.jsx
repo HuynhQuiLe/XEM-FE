@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import Avatar from '../Avatar/Avatar';
 import { userSer } from '../../api/api';
 import SmallLogo from '../Logo/SmallLogo';
+import SubHeaderLogo from '../Logo/SubHeaderLogo';
 
 const ProfileSubHeader = () => {
   const navigate = useNavigate()
@@ -28,7 +29,7 @@ const ProfileSubHeader = () => {
           <div className='h-[60px] bg-black text-white px-[20px] flex items-center rounded-[8px] cursor-pointer'
               onClick={() => setIsShow(!isShow)}
           >
-              <div className=' cursor-pointer'><SmallLogo width={15} /> </div>
+              <div className=' cursor-pointer'><SubHeaderLogo width={15} /> </div>
               <p className='mr-3 ml-1'>profile</p>
               <i className=" cursor-pointer fa fa-bars"></i>
           </div>

@@ -1,8 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 html {
+    scroll-behavior: smooth;
     font-family: "Montserrat", sans-serif !important;
-    @apply bg-master_bg text-black text-[16px] max-w-[1920px] m-auto px-[52px] 
+    
+}
+
+
+body {
+    transition: all .3s ease-in-out;
+    margin: auto!important;
+    @apply bg-master_bg text-black text-[16px] max-w-[1920px]  px-[52px]
+
+}
+
+body.dark-theme {
+    transition: all .3s ease-in-out;
+    @apply bg-black text-white text-[16px] max-w-[1920px] px-[52px] 
+
 }
 
 body.no-scroll {
@@ -35,9 +50,27 @@ body.no-scroll {
   }
 
 .dot-line {
-background-image: linear-gradient(to right, rgb(49, 34, 34) 0 10%, rgba(255, 255, 255, 0) 10%);
-background-position: top;
-background-size: 8px 1px;
-background-repeat: repeat-x;
+    background-image: linear-gradient(to right, rgb(49, 34, 34) 0 10%, rgba(255, 255, 255, 0) 10%);
+    background-position: top;
+    background-size: 8px 1px;
+    background-repeat: repeat-x;
 }
+
+.dot-line-buttom {
+    background-image: linear-gradient(to right, rgb(49, 34, 34) 0 10%, rgba(255, 255, 255, 0) 10%);
+    background-position: bottom;
+    background-size: 8px 1px;
+    background-repeat: repeat-x;
+}
+
+.dark-theme .dot-line {
+    background-image: linear-gradient(to right, rgb(122, 122, 122) 0 10%, rgba(255, 255, 255, 0) 10%);
+}
+
+.text-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 

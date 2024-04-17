@@ -3,11 +3,10 @@ import { Outlet, useLocation } from 'react-router-dom'
 import Header from '../components/Header/Header'
 import HomeSubHeader from '../components/SubHeader/HomeSubHeader'
 import Footer from '../components/Footer/Footer'
-import ReviewSubHeader from '../components/SubHeader/ReviewSubHeader'
 import Navigation from '../components/Navigation/Navigation'
 import ProfileSubHeader from '../components/SubHeader/ProfileSubHeader'
 import SettingSubHeader from '../components/SubHeader/SettingSubHeader'
-import AddReviewSubHeader from '../components/SubHeader/AddReviewSubHeader'
+import DetailSubHeader from '../components/SubHeader/DetailSubHeader'
 
 const Main = () => {
   const {pathname} = useLocation()
@@ -16,9 +15,7 @@ const Main = () => {
       return <HomeSubHeader/>
     }
 
-    if(pathname.includes('danh-gia')) {
-      return <ReviewSubHeader/>
-    }
+   
 
     if(pathname.includes('profile')) {
       return <ProfileSubHeader/>
@@ -28,15 +25,17 @@ const Main = () => {
       return <SettingSubHeader/>
     }
 
-    if(pathname.includes('them-review')) {
-      return <AddReviewSubHeader/>
+    if(pathname.includes('chi-tiet')) {
+      return <DetailSubHeader/>
     }
+
+   
   }
 
   return (
     <>
         <Header/>
-        <Navigation/>
+        {/* <Navigation/> */}
         <Outlet />
         <Footer/>
         {renderSubHeader()}

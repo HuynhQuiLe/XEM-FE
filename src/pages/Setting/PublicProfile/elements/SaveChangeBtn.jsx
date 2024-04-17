@@ -2,11 +2,15 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import LoadingCircle from '../../../../components/LoadingCircle/LoadingCircle';
 import {useState} from 'react';
-import { uploadSer, userSer } from '../../../../api/api';
+import {userSer} from '../../../../api/api';
 import { notificationLocalStorage } from '../../../../api/localStorage';
+import {notify} from '../../../../utils/notify/notify';
+import {upload} from '../../../../utils/upload/upload';
+import UploadingBar from '../../../../components/Bar/UploadingBar';
 
 const SaveChangeBtn = ({user}) => {
-  const dispatch = useDispatch()
+  const [downloadURL, setDownloadURL] = useState(null)
+  const [progress, setProgress] = useState(0)
   const {isLoading} =useSelector(state => state.minusLoadingSlice)
   const [disabled, setDisabled] = useState(false)
 
@@ -20,27 +24,31 @@ const SaveChangeBtn = ({user}) => {
     }
   },[user])
 
+
+  useEffect(() => {
+    if(downloadURL) {
+      // update avatar link
+      user.avatar = downloadURL
+
+      userSer.updatePublicProfile(user)
+      .then((response)=>{
+        setDisabled(false)
+        notificationLocalStorage.set(response.data.message)
+        window.location.reload()
+      })
+      .catch((error) => {
+        setDisabled(false)
+        error?.response?.data.message && notify.success(error.response.data.message)})
+      
+    }
+    },[downloadURL])
+
   const save = () => {
+    setDisabled(true)
+    // tien hanh upload cover
     if(user.avatar && typeof user.avatar === 'object') {
-      const  dataPhoto = new FormData();
-      //upload avatar truoc
-      dataPhoto.append("avatar", user.avatar);
-      uploadSer.avatar(dataPhoto)
-        .then(({ data }) => {
-          user.avatar = data.content
-        })
-        .then(() => {
-          //tien hanh upload
-          userSer.updatePublicProfile(user)
-          .then((response)=>{
-            notificationLocalStorage.set(response.data.message)
-            window.location.reload()
-          })
-        })
-        
-        .catch((error) => {
-          console.log(error)
-        });
+      let file = user.avatar
+      upload.avatar(file, setProgress, setDownloadURL)
     } else {
       userSer.updatePublicProfile(user)
       .then(({data})=>{
@@ -48,27 +56,10 @@ const SaveChangeBtn = ({user}) => {
         window.location.reload()
       })
       .catch((error) => {
-        console.log(error)
+        setDisabled(false)
+        error?.response?.data.message && notify.success(error.response.data.message)
       });
     }
-
-   
-
-
-    // setLoading(true)
-    // userSer.updatePublicProfile(user)
-    // .then(({data}) => {
-    //   notificationLocalStorage.set(data.message)
-    //   setTimeout(() => {
-    //     setLoading(false)
-    //     window.location.reload()  
-    //   }, 1000);
-
-    // })
-    // .catch(error => {
-    //   setLoading(false)
-    //   console.log(error)
-    // })
   }
   return (
     <div className='w-[20%]'>
@@ -80,6 +71,7 @@ const SaveChangeBtn = ({user}) => {
           {isLoading ? <LoadingCircle/> : "Lưu thay đổi"}
         </button>
         <p className='mt-[8px] mb-[16px] font-light text-[15px]'>Luôn nhớ lưu thay đổi trước khi bạn rời khỏi nhé.</p>
+        <UploadingBar  progress={progress}/>
     </div>
   )
 }

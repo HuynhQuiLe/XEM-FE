@@ -50,7 +50,7 @@ const PublicProfile = () => {
                     <div className='mt-[36px]'>
                         <div>
                             <p className='font-light mb-[16px]'>
-                            Reviewer có thể thông báo cho tôi bằng email được cá nhân hóa về sản phẩm và dịch vụ. Xem
+                            <strong className='font-semibold cursor-pointer'>XEM.</strong> có thể thông báo cho tôi bằng email được cá nhân hóa về sản phẩm và dịch vụ. Xem
                                 <strong className='font-semibold cursor-pointer'> Chính sách quyền riêng tư </strong> 
                                 của chúng tôi để biết thêm chi tiết.
                             </p>

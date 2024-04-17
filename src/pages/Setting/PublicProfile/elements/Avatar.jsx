@@ -82,22 +82,6 @@ const Avatar = ({user, avatar, changeUserInfo}) => {
 
 
     const handlePreview = (e) => {
-
-        console.log('han1')
-
-        // // code chay khi da luu input
-        // if(preview) {
-        // console.log('chayn2')
-
-        //     let reader = new FileReader();
-        //     reader.readAsDataURL(preview);
-        //     reader.onload = function (oFREvent) {
-        //     document.getElementById("showPreview").src = oFREvent.target.result;
-        // };
-        //     return
-        // }
-        
-
         // code chay khi chua select input lan nao
         let files = e.target.files;
         let f = files[0];
@@ -116,13 +100,6 @@ const Avatar = ({user, avatar, changeUserInfo}) => {
         changeUserInfo('avatar', files[0])
     }
 
-
-    // if(preview) {
-    //     console.log(avatar)
-    //     console.log('han2')
-
-    //     handlePreview()
-    // }
   return (
     <div className='mt-[36px]'>
         <div>
