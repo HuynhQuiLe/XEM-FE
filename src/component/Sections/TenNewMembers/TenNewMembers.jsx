@@ -1,7 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { userSer } from '../../../api/api'
+import Avatar from '../../Photos/Avatar/Avatar'
+import DefaultTooltip from '../../Tooltip/DefaultTooltip'
 
-const HonorsAvatar = () => {
+
+const TenNewMembers = () => {
+    useEffect(() => {
+        document.querySelector('.mousemove-event').addEventListener('mousemove', e=> {
+            var x = e.offsetX;
+            var y = e.offsetY;
+            var newposX = x + 20;
+            var newposY = y - 100; 
+            document.querySelectorAll(".move").forEach(item => {
+                item.style.transform = (`translate3d(${newposX}px,${newposY}px,0px)`)
+            })
+        })
+    })
+
+
     const[newMemberList, setNewMemberList] = useState(null)
 
     const positionList = [
@@ -28,14 +44,8 @@ const HonorsAvatar = () => {
         return newMemberList.map((member, index) => {
             return (
                 <div key={index} className={`group absolute w-[120px] h-[120px] ${positionList[index]}  rounded-full`}>
-                    <img className='w-full h-full rounded-full object-cover grayscale border-[1px] border-black hover:grayscale-0 transition-default' 
-                        src={member.avatar} alt= {`avatar của ${member.full_name}`}
-                    />
-                    <p className=' move opacity-0 px-[10px] group-hover:opacity-100 py-[8px] overflow-hidden absolute text-white bg-black text-nowrap rounded-[8px]'
-                    style={{
-                        transition:'transform .4s cubic-bezier(.02,1.23,.79,1.08)'
-                        }}
-                    >{member.full_name}</p>
+                    <Avatar size={120} avatar={member.avatar} full_name={member.full_name}  hoverEffect={true}/>
+                    <DefaultTooltip text={member.full_name} /> 
                 </div>
             )
         })
@@ -49,4 +59,4 @@ const HonorsAvatar = () => {
   )
 }
 
-export default HonorsAvatar
+export default TenNewMembers

@@ -9,7 +9,7 @@ import {upload} from '../../../utils/upload/upload';
 import UploadingBar from '../../../components/Bar/UploadingBar';
 
 
-const SaveChange = ({episode}) => {
+const SaveChange = ({episode, folderName}) => {
   const [downloadURL, setDownloadURL] = useState(null)
   const [progress, setProgress] = useState(0)
   const [disabled, setDisabled] = useState(false)
@@ -60,7 +60,7 @@ const SaveChange = ({episode}) => {
       // tien hanh dua len data base
       if(episode.video && typeof episode.video === 'object') {
         let file = episode.video
-        upload.video(file, setProgress, setDownloadURL)
+        upload.video(file, setProgress, setDownloadURL, folderName )
          
        
      } else {

@@ -2,7 +2,7 @@ import React from 'react'
 import {useState, useEffect} from 'react';
 import { filmSer } from '../../../api/api';
 
-const SelectFilm = ({film_id, changeEpisode }) => {
+const SelectFilm = ({film_id, changeEpisode, changeFolderName}) => {
     const [showFilm, setShowFilm] = useState(false)
     const [films, setFilms] = useState(null)
 
@@ -18,7 +18,10 @@ const SelectFilm = ({film_id, changeEpisode }) => {
             return <p className={`px-[15px] py-[6px] ${film?.film_id === film_id ? 'bg-light_gray_2' : 'bg-white'} hover:bg-light_gray_2 transition-default cursor-pointer`} 
                         key={index} 
                         film_id={film?.film_id}
-                        onClick={(e) => changeEpisode('film_id',Number(e.target.getAttribute('film_id')))}
+                        onClick={(e) => {
+                            changeEpisode('film_id',Number(e.target.getAttribute('film_id')))
+                            changeFolderName('film_name', film?.film_name)
+                        }}
                     >{film?.film_name}</p>
         })
     }

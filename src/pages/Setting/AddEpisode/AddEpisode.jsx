@@ -5,10 +5,16 @@ import Video from './Video';
 import EpisodeNumber from './EpisodeNumber';
 import SaveChange from './SaveChange';
 import StatusFilm from './StatusFilm';
+import { removeTone } from '../../../utils/convert/convertTone';
 
 
 const AddEpisode = () => {
     const [checked, setChecked] = useState(true)
+
+    const [folderName, setFolderName] = useState({
+        film_name: '',
+        session_number:''
+    })
 
     const [episode, setEpisode] =useState({
         film_id: null,
@@ -31,6 +37,11 @@ const AddEpisode = () => {
     }
   }
 
+  const changeFolderName = (key, value) => {
+    let convert = removeTone(value).replaceAll(' ','-')
+    setFolderName({...folderName, [key]: convert})
+  }
+
   return (
     <div className='relative'>
     <div className='flex mt-[10px] mb-[70px]'>
@@ -39,11 +50,11 @@ const AddEpisode = () => {
             </div>
             <div className='w-[60%] px-[30px] '>
                 <div className='flex gap-[20px]'>
-                    <SelectFilm film_id ={episode.film_id} changeEpisode={changeEpisode}/>
+                    <SelectFilm film_id ={episode.film_id} changeEpisode={changeEpisode} changeFolderName={changeFolderName}/>
                 </div>
 
                 <div className='flex gap-[20px] mt-[36px]'>
-                    <SelectSession session_id ={episode.session_id} film_id ={episode.film_id} changeEpisode={changeEpisode}/>
+                    <SelectSession session_id ={episode.session_id} film_id ={episode.film_id} changeEpisode={changeEpisode} changeFolderName={changeFolderName}/>
                 </div>
 
                 <div className='flex gap-[20px] mt-[36px]'>
@@ -72,7 +83,7 @@ const AddEpisode = () => {
                 </div>
 
             </div>
-            <SaveChange episode={episode} />
+            <SaveChange episode={episode} folderName={folderName} />
     </div>
 </div>
   )

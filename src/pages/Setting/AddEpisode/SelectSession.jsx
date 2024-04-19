@@ -2,7 +2,7 @@ import React from 'react'
 import {useState, useEffect} from 'react';
 import { sessionSer } from '../../../api/api';
 
-const SelectSession = ({film_id, session_id, changeEpisode }) => {
+const SelectSession = ({film_id, session_id, changeEpisode, changeFolderName }) => {
     const [showSession, setShowSession] = useState(false)
     const [sessions, setSessions] = useState(null)
     const [disabled, setDisabled] = useState(true)
@@ -25,7 +25,10 @@ const SelectSession = ({film_id, session_id, changeEpisode }) => {
             return <p className={`px-[15px] py-[6px] ${session?.session_id === session_id ? 'bg-light_gray_2' : 'bg-white'} hover:bg-light_gray_2 transition-default cursor-pointer`} 
                         key={index} 
                         session_id={session?.session_id}
-                        onClick={(e) => changeEpisode('session_id',Number(e.target.getAttribute('session_id')))}
+                        onClick={(e) => {
+                            changeEpisode('session_id',Number(e.target.getAttribute('session_id')))
+                            changeFolderName('session_number', session?.session_number)
+                        }}
                     >{session?.session_number}</p>
         })
     }

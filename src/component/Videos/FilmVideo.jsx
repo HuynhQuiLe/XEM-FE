@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { episodeSer, viewSer } from '../../api/api'
-import { history } from '../../utils/history/history'
+import React from 'react'
+import {useState, useEffect} from 'react';
+import {history} from '../../utils/history/history';
+import {episodeSer, viewSer} from '../../api/api';
 
-const Film = ({url, episode_name}) => {
-    const [episode, setEpisode] = useState(null)
-   
-    const [isPlay, setIsPlay] = useState(false)
+const FilmVideo = ({url, episode_name}) => {
+  const [episode, setEpisode] = useState(null)
+
 
     useEffect(() => {
         //get video
@@ -13,18 +13,19 @@ const Film = ({url, episode_name}) => {
         .then(({data}) => {
             setEpisode(data.content)
         })
-
+    
         // tang view
         viewSer.increaseTotalView(url)
-    },[episode_name])
+      },[episode_name])
+    
+
+
+    const [isPlay, setIsPlay] = useState(false)
 
     const handlePlay = () => {
         setIsPlay(!isPlay)
         isPlay ? document.querySelector('video').pause() :  document.querySelector('video').play() 
-       
     }
-
-  
 
   return (
     <div className='group w-full h-[80vh] mb-[50px] relative'>
@@ -45,4 +46,5 @@ const Film = ({url, episode_name}) => {
   )
 }
 
-export default Film
+
+export default FilmVideo

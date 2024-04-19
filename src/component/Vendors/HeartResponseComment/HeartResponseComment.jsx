@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { commentSer } from '../../api/api'
-import { heartLocalStorage, heartResponseLocalStorage } from '../../api/localStorage'
+import React from 'react'
+import {useEffect, useState} from 'react';
+import {commentSer} from '../../../api/api';
+import {heartResponseLocalStorage} from '../../../api/localStorage';
 
-const ResponseHeart = ({response_id}) => {
+const HeartResponseComment = ({response_id}) => {
     const [hearts, setHearts] = useState(0)
 
     const [isPress, setIsPress] = useState(false)
@@ -62,4 +63,4 @@ const ResponseHeart = ({response_id}) => {
     )
 }
 
-export default ResponseHeart
+export default HeartResponseComment

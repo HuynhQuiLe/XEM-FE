@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { episodeSer } from '../../api/api'
-import LatestEpisode from '../../component/Vendors/LatestEpisode/LatestEpisode'
+import React from 'react'
+import LatestEpisode from '../../../component/Vendors/LatestEpisode/LatestEpisode'
 
-const General = ({session_name, session_other_name, published_date, duration, types, session_id}) => {
+const FilmGeneralInformation = ({session_name, session_other_name, published_date, duration, types, session_id}) => {
 
 
     const renderType = () => {
@@ -63,4 +62,4 @@ const General = ({session_name, session_other_name, published_date, duration, ty
   )
 }
 
-export default General
+export default FilmGeneralInformation

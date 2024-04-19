@@ -1,22 +1,9 @@
 import React, { useEffect } from 'react'
 import HonorsBackground from '../../Photos/Background/HonorsBackground';
-import HonorsAvatar from '../../Photos/Avatar/HonorsAvatar';
 import SectionHeading from '../../Headings/SectionHeading/SectionHeading';
+import TenNewMembers from '../TenNewMembers/TenNewMembers';
 
 const Honors = () => {
-
-    useEffect(() => {
-        document.querySelector('.mousemove-event').addEventListener('mousemove', e=> {
-            var x = e.offsetX;
-            var y = e.offsetY;
-            var newposX = x + 20;
-            var newposY = y - 100; 
-            document.querySelectorAll(".move").forEach(item => {
-                item.style.transform = (`translate3d(${newposX}px,${newposY}px,0px)`)
-            })
-        })
-    })
-
 
 
   return (
@@ -29,7 +16,7 @@ const Honors = () => {
         />
         <div className='w-full h-[50vh] mb-[120px] relative'>
             <HonorsBackground/>
-            <HonorsAvatar />
+            <TenNewMembers />
         </div>
         
         

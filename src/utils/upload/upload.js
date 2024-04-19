@@ -67,7 +67,7 @@ export const upload = {
         }
 
         // Luu tru tai... + set name 
-        const storageRef = ref(storage, `cover/${dateTime} - ${file.name}`)
+        const storageRef = ref(storage, `cover/${dateTime}-${file.name}`)
 
 
         // cac ham khi uplaoding
@@ -107,7 +107,7 @@ export const upload = {
         }
 
         // Luu tru tai... + set name 
-        const storageRef = ref(storage, `poster/${dateTime} - ${file.name}`)
+        const storageRef = ref(storage, `poster/${dateTime}-${file.name}`)
 
 
         // cac ham khi uplaoding
@@ -135,7 +135,7 @@ export const upload = {
     },
 
 
-    video: (file, setProgress, setUrl) => {
+      video: (file, setProgress, setUrl, folderName) => {
         // bat loading circle
         store.dispatch(setMinusLoadingOn())
 
@@ -145,7 +145,7 @@ export const upload = {
         }
 
         // Luu tru tai... + set name 
-        const storageRef = ref(storage, `video/${dateTime} - ${file.name}`)
+        const storageRef = ref(storage, `video-v2/${folderName.film_name}/${folderName.session_number}/${dateTime}-${file.name}`)
 
 
         // cac ham khi uplaoding

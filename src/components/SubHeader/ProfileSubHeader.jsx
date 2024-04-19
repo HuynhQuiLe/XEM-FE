@@ -1,10 +1,10 @@
 import {useState, useEffect} from 'react';
 import MainMenu from './MainMenu'
 import { useNavigate } from 'react-router-dom'
-import Avatar from '../Avatar/Avatar';
 import { userSer } from '../../api/api';
 import SmallLogo from '../Logo/SmallLogo';
 import SubHeaderLogo from '../Logo/SubHeaderLogo';
+import Avatar from '../../component/Photos/Avatar/Avatar';
 
 const ProfileSubHeader = () => {
   const navigate = useNavigate()
@@ -36,7 +36,7 @@ const ProfileSubHeader = () => {
         </div>
         {!isShow && <div className='ml-[6px] bg-[#3e3e3e] text-white rounded-[8px] h-[60px] flex items-center px-[6px]'>
             <div className='flex items-center ml-[6px] mr-[12px] gap-[10px] '>
-              <Avatar size={32} />
+              <Avatar  size={32} full_name={profile?.full_name} avatar={profile?.avatar}/>
               <p className='link-text leading-[200%] before:bg-white '>{profile?.full_name}</p>
             </div>
         </div>}

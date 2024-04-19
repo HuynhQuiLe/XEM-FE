@@ -1,9 +1,8 @@
 import {useState, useEffect} from 'react';
 import MainMenu from './MainMenu'
 import {userSer} from '../../api/api.js';
-import Avatar from '../Avatar/Avatar';
-import SmallLogo from '../Logo/SmallLogo';
 import SubHeaderLogo from '../Logo/SubHeaderLogo';
+import Avatar from '../../component/Photos/Avatar/Avatar';
 
 const SettingSubHeader = () => {
   const [isShow, setIsShow] = useState(false)
@@ -33,7 +32,7 @@ const SettingSubHeader = () => {
         </div>
         {!isShow && <div className='ml-[6px] bg-[#3e3e3e] text-white rounded-[8px] h-[60px] flex items-center px-[6px]'>
             <div className='flex items-center ml-[6px] mr-[12px] gap-[10px] '>
-              <Avatar size={32} />
+              <Avatar full_name={profile?.full_name} avatar={profile?.avatar} size={32} />
               <p className='link-text leading-[200%] before:bg-white '>{profile?.full_name}</p>
             </div>
         </div>}

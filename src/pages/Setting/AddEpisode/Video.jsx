@@ -77,6 +77,8 @@ const Video = ({episode, video, changeEpisode}) => {
           document.getElementById("showPreviewVideo").src = oFREvent.target.result;
         };
 
+        console.log(files[0].name)
+
         setPreview(files[0]);
         changeEpisode('video', files[0])
     }
@@ -85,7 +87,7 @@ const Video = ({episode, video, changeEpisode}) => {
   return (
     <div className='mt-[36px]'>
         <div>
-            <label  className='label-text '>video</label>
+            <label  className='label-text '>video <span>{preview ? ' - ' + preview.name: null}</span></label>
         </div>
         <SelectPicture/>
     </div>
