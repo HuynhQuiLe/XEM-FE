@@ -2,7 +2,9 @@ import React from 'react'
 
 const NormalLoadingCircle = () => {
   return (
-    <div>NormalLoadingCircle</div>
+    <div id="loading-bar-spinner" className="spinner">
+        <div className="spinner-icon"></div>
+    </div>
   )
 }
 

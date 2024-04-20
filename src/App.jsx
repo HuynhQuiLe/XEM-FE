@@ -10,7 +10,6 @@ import { notificationLocalStorage } from './api/localStorage'
 import { notify } from './utils/notify/notify'
 import LoginAgain from './components/LoginAgain/LoginAgain'
 import Profile from './pages/Profile/Profile'
-import Setting from './pages/Setting/Setting'
 import PublicProfile from './pages/Setting/PublicProfile/PublicProfile'
 import PersonInfo from './pages/Setting/PersonInfo/PersonInfo'
 import Private from './layouts/Private'
@@ -18,8 +17,9 @@ import Details from './pages/Details/Details'
 import FollowingFilms from './pages/FollowingFilms/FollowingFilms'
 import History from './pages/History/History'
 import AddEpisode from './pages/Setting/AddEpisode/AddEpisode'
-import Add from './pages/Setting/AddFilm/Add'
+import AddFilmAndSession from './pages/Setting/AddFilmAndSession/AddFilmAndSession'
 import Notification from './pages/Notofication/Notification'
+import Setting from './layouts/Setting'
 
 function App() {
   
@@ -38,7 +38,7 @@ function App() {
           <Route path='settings' element={<Private><Setting/></Private>} >
             <Route path='ho-so' element={<PublicProfile/>}/>
             <Route path='thong-tin-ca-nhan' element={<PersonInfo/>}/>
-            <Route path='them-phim-moi' element={<Add/>}/>
+            <Route path='them-phim-moi' element={<AddFilmAndSession/>}/>
             <Route path='them-tap-phim' element={<AddEpisode/>}/>
           </Route>
           {/* phim details */}

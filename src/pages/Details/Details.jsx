@@ -9,7 +9,7 @@ import EpisodeFilm from '../../component/Sections/EpisodeFilm/EpisodeFilm';
 import ScheduleFilm from '../../component/Sections/ScheduleFilm/ScheduleFilm';
 import ContentFilm from '../../component/Sections/ContentFilm/ContentFilm';
 import Comment from '../../component/Sections/Comment/Comment';
-import ShortFilmInformation from '../../component/ShortFilmInformation/ShortFilmInformation';
+import ShortFilmInformation from '../../component/Elements/ShortFilmInformation/ShortFilmInformation';
 const Details = () => {
   const {url, episode_name} =useParams()
 

@@ -2,8 +2,8 @@ import React from 'react'
 import {useEffect, useState} from 'react';
 import {commentSer} from '../../../api/api';
 import SectionHeading from '../../Headings/SectionHeading/SectionHeading';
-import CommentForm from '../../Elements/CommentForm/CommentForm';
 import CommentItem from '../../Elements/CommentItem/CommentItem';
+import CommentForm from '../../Forms/CommentForm/CommentForm';
 
 const Comment = ({session_id}) => {
   const [responseUser, setResponseUser] = useState('')

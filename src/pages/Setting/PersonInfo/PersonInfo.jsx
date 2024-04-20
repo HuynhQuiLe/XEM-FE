@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
-import ChangePassword from './elements/ChangePassword/ChangePassword'
-import ChangeEmail from './elements/ChangeEmail/ChangeEmail'
-import DeleteAccount from './elements/DeleteAccount/DeleteAccount'
-import EnterPasswordToAccess from '../../../components/EnterPasswordToAccess/EnterPasswordToAccess'
 import {useSelector} from 'react-redux';
+import ChangePasswordForm from '../../../component/Forms/ChangePasswordForm/ChangePasswordForm'
+import ChangeEmailForm from '../../../component/Forms/ChangeEmailForm/ChangeEmailForm';
+import DeleteAccount from '../../../component/Elements/DeleteAccount/DeleteAccount';
+import EnterPasswordToAccess from '../../../component/Modals/EnterPasswordToAccess/EnterPasswordToAccess';
 
 const PersonInfo = () => {
   const {isConfirm} = useSelector(state => state.authSlice)
@@ -14,9 +14,9 @@ const PersonInfo = () => {
   return (
     <>
       <div className='relative'>
-        <ChangePassword/>
+        <ChangePasswordForm />
         <div className='mt-[100px] mb-[50px] h-[1px] w-full bg-line'></div>
-        <ChangeEmail/>
+        <ChangeEmailForm />
         <div className='mt-[100px] mb-[50px] h-[1px] w-full bg-line'></div>
         <DeleteAccount/>
       </div>
