@@ -1,6 +1,6 @@
 import React from 'react'
-import AddFilmForm from '../../../component/Forms/AddFilmForm/AddFilmForm'
-import AddSessionForm from '../../../component/Forms/AddSessionForm/AddSessionForm'
+import AddFilmForm from '../../../components/Forms/AddFilmForm/AddFilmForm'
+import AddSessionForm from '../../../components/Forms/AddSessionForm/AddSessionForm'
 
 const Add = () => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import { tokenLocalStorage } from '../../api/localStorage'
-import NotLoggedin from '../../component/Sections/FollowingFilms/NotLoggedin/NotLoggedin'
-import Loggedin from '../../component/Sections/FollowingFilms/Loggedin/Loggedin'
+import NotLoggedin from '../../components/Sections/FollowingFilms/NotLoggedin/NotLoggedin'
+import Loggedin from '../../components/Sections/FollowingFilms/Loggedin/Loggedin'
 
 
 const FollowingFilms = () => {

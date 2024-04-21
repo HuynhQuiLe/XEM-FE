@@ -1,6 +1,6 @@
 import React, {useState } from 'react'
 import MainMenu from './MainMenu'
-import SubHeaderLogo from '../Logo/SubHeaderLogo'
+import SubHeaderLogo from '../Logos/SubHeaderLogo'
 import { useLocation, useParams } from 'react-router-dom'
 
 const DetailSubHeader = () => {

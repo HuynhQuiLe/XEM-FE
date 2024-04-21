@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { notificationSer } from '../../api/api'
 import { useNavigate } from 'react-router-dom'
-import EmptyHead from '../../component/Tables/Head/EmptyHead/EmptyHead'
-import EmptyBody from '../../component/Tables/Body/EmptyBody/EmptyBody'
-import NotificationTableBody from '../../component/Tables/Body/Notification/NotificationTableBody'
-import NumberOfNotification from '../../component/Vendors/NumberOfNotification/NumberOfNotification'
+import EmptyHead from '../../components/Tables/Head/EmptyHead/EmptyHead'
+import EmptyBody from '../../components/Tables/Body/EmptyBody/EmptyBody'
+import NotificationTableBody from '../../components/Tables/Body/Notification/NotificationTableBody'
+import NumberOfNotification from '../../components/Vendors/NumberOfNotification/NumberOfNotification'
 
 const Notification = () => {
   const navigate = useNavigate()

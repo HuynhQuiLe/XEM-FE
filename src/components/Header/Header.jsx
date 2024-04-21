@@ -1,13 +1,14 @@
 import React from 'react'
-import User from './elements/User'
-import {useSelector } from 'react-redux'
-import LoginSignupBTN from './elements/LoginSignupBTN'
-import SearchBar from './elements/SearchBar'
-import { useLocation, useNavigate } from 'react-router-dom'
-import MainLogo from '../Logo/MainLogo'
+import {useSelector} from 'react-redux';
+import {useLocation} from 'react-router-dom';
+import MainLogo from '../Logos/MainLogo';
+import SearchBar from '../Elements/SearchBar/SearchBar'
+import LoginAndSignupNavigation from '../Elements/LoginAndSignupNavigation/LoginAndSignupNavigation';
+import HistoryButton from '../Buttons/DefaultButtons/HistoryButton';
+import FollowingFilmButton from '../Buttons/DefaultButtons/FollowingFilmButton';
+import UserLoggin from '../Elements/UserLoggin/UserLoggin';
 
 const Header = () => {
-    const navigate = useNavigate()
     const {pathname} = useLocation() 
     const {token} = useSelector(state => state.authSlice)
     return (
@@ -17,13 +18,13 @@ const Header = () => {
                 <SearchBar />
                 <div className=' flex items-center justify-end ml-[20px]'>
                     <div className='mr-[10px] min-w-[32px]'>
-                            {token && <User/>}
-                            {!token && <LoginSignupBTN/>}
+                            {token && <UserLoggin/>}
+                            {!token && <LoginAndSignupNavigation/>}
                     </div>
 
                     <div className='ml-[8px] flex items-center'>
-                        <button className={`button text-nowrap ${pathname.includes("chi-tiet") ? 'bg-white text-black' : 'bg-black text-white'}`} onClick={() => navigate('/phim-da-luu')} >Phim Đã Lưu</button>
-                        <button className={`button bg-transparent border-[1px]  text-nowrap ml-[8px] ${pathname.includes("chi-tiet") ? 'text-white border-white' :'text-black border-black'}`} onClick={() => navigate('/lich-su')}>Lịch Sử</button>
+                        <HistoryButton pathname={pathname} />
+                        <FollowingFilmButton pathname={pathname}/>
                     </div>
                 </div>
             </header>

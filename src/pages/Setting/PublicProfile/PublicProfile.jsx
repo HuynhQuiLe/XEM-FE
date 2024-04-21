@@ -1,8 +1,8 @@
 import React from 'react'
 import {useState, useEffect} from 'react';
 import { userSer } from '../../../api/api.js';
-import PublicProfileForm from '../../../component/Forms/PublicProfileForm/PublicProfileForm.jsx';
-import SavePublicProfileButton from '../../../component/Buttons/SavePublicProfileButton.jsx';
+import PublicProfileForm from '../../../components/Forms/PublicProfileForm/PublicProfileForm.jsx';
+import SavePublicProfileButton from '../../../components/Buttons/SavePublicProfileButton.jsx';
 
 const PublicProfile = () => {
     const [checked, setChecked] = useState(true)

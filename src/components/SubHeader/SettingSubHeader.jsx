@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react';
 import MainMenu from './MainMenu'
 import {userSer} from '../../api/api.js';
-import SubHeaderLogo from '../Logo/SubHeaderLogo';
-import Avatar from '../../component/Photos/Avatar/Avatar';
+import SubHeaderLogo from '../Logos/SubHeaderLogo';
+import Avatar from '../../components/Photos/Avatar/Avatar';
 
 const SettingSubHeader = () => {
   const [isShow, setIsShow] = useState(false)

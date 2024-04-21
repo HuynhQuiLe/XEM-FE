@@ -2,9 +2,8 @@ import {useState, useEffect} from 'react';
 import MainMenu from './MainMenu'
 import { useNavigate } from 'react-router-dom'
 import { userSer } from '../../api/api';
-import SmallLogo from '../Logo/SmallLogo';
-import SubHeaderLogo from '../Logo/SubHeaderLogo';
-import Avatar from '../../component/Photos/Avatar/Avatar';
+import Avatar from '../../components/Photos/Avatar/Avatar';
+import SubHeaderLogo from '../Logos/SubHeaderLogo';
 
 const ProfileSubHeader = () => {
   const navigate = useNavigate()

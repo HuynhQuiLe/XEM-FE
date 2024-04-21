@@ -4,9 +4,9 @@ import { notificationLocalStorage } from '../../api/localStorage'
 import { authSer } from '../../api/api'
 import { closeModal, setIsOpenedModalLogin } from '../../redux/modalSlice'
 import { useDispatch, useSelector } from 'react-redux'
-import LoadingCircle from '../../components/LoadingCircle/LoadingCircle';
 import { userSignupLocalStorage } from '../../api/localStorage'
 import { notify } from '../../utils/notify/notify'
+import NormalLoadingCircle from '../../components/Icons/Loading/NormalLoadingCircle'
 
 const Verification = () => {
     const dispatch = useDispatch()
@@ -116,7 +116,7 @@ const Verification = () => {
                             <button className='w-full h-[72px] bg-black text-white rounded-[8px] text-[20px] font-light hover:bg-black_hover transition-all ease-in-out duration-300 cursor-pointer'
                                 onClick={verify}
                             >
-                                {isLoading ? <LoadingCircle/> : "Xác minh tài khoản"}
+                                {isLoading ? <NormalLoadingCircle/> : "Xác minh tài khoản"}
                             </button>
                         </div>
 

@@ -1,12 +1,11 @@
 import React from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
-import Header from '../components/Header/Header'
-import HomeSubHeader from '../components/SubHeader/HomeSubHeader'
-import Footer from '../components/Footer/Footer'
-import Navigation from '../components/Navigation/Navigation'
-import ProfileSubHeader from '../components/SubHeader/ProfileSubHeader'
 import SettingSubHeader from '../components/SubHeader/SettingSubHeader'
 import DetailSubHeader from '../components/SubHeader/DetailSubHeader'
+import Header from '../components/Header/Header'
+import Footer from '../components/Footer/Footer'
+import HomeSubHeader from '../components/SubHeader/HomeSubHeader'
+import ProfileSubHeader from '../components/SubHeader/ProfileSubHeader'
 
 const Main = () => {
   const {pathname} = useLocation()
@@ -35,7 +34,6 @@ const Main = () => {
   return (
     <>
         <Header/>
-        {/* <Navigation/> */}
         <Outlet />
         <Footer/>
         {renderSubHeader()}

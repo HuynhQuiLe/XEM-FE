@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import {useSelector} from 'react-redux';
-import ChangePasswordForm from '../../../component/Forms/ChangePasswordForm/ChangePasswordForm'
-import ChangeEmailForm from '../../../component/Forms/ChangeEmailForm/ChangeEmailForm';
-import DeleteAccount from '../../../component/Elements/DeleteAccount/DeleteAccount';
-import EnterPasswordToAccess from '../../../component/Modals/EnterPasswordToAccess/EnterPasswordToAccess';
+import ChangePasswordForm from '../../../components/Forms/ChangePasswordForm/ChangePasswordForm'
+import ChangeEmailForm from '../../../components/Forms/ChangeEmailForm/ChangeEmailForm';
+import DeleteAccount from '../../../components/Elements/DeleteAccount/DeleteAccount';
+import EnterPasswordToAccess from '../../../components/Modals/EnterPasswordToAccess/EnterPasswordToAccess';
 
 const PersonInfo = () => {
   const {isConfirm} = useSelector(state => state.authSlice)

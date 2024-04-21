@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import {sessionSer} from '../../api/api';
 import { useParams } from 'react-router-dom'
-import FilmMasterCover from '../../component/Sections/FilmMasterCover/FilmMasterCover'
-import FilmInformation from '../../component/Sections/FilmInformation/FilmInformation'
-import FilmVideo from '../../component/Videos/FilmVideo';
-import SessionFilm from '../../component/Sections/SessionFilm/SessionFilm';
-import EpisodeFilm from '../../component/Sections/EpisodeFilm/EpisodeFilm';
-import ScheduleFilm from '../../component/Sections/ScheduleFilm/ScheduleFilm';
-import ContentFilm from '../../component/Sections/ContentFilm/ContentFilm';
-import Comment from '../../component/Sections/Comment/Comment';
-import ShortFilmInformation from '../../component/Elements/ShortFilmInformation/ShortFilmInformation';
+import FilmMasterCover from '../../components/Sections/FilmMasterCover/FilmMasterCover'
+import FilmInformation from '../../components/Sections/FilmInformation/FilmInformation'
+import FilmVideo from '../../components/Videos/FilmVideo';
+import SessionFilm from '../../components/Sections/SessionFilm/SessionFilm';
+import EpisodeFilm from '../../components/Sections/EpisodeFilm/EpisodeFilm';
+import ScheduleFilm from '../../components/Sections/ScheduleFilm/ScheduleFilm';
+import ContentFilm from '../../components/Sections/ContentFilm/ContentFilm';
+import Comment from '../../components/Sections/Comment/Comment';
+import ShortFilmInformation from '../../components/Elements/ShortFilmInformation/ShortFilmInformation';
 const Details = () => {
   const {url, episode_name} =useParams()
 

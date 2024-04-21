@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { removeTone } from '../../../utils/convert/convertTone';
-import AddEpisodeForm from '../../../component/Forms/AddEpisodeForm/AddEpisodeForm';
-import CreateEpisodeFilmButton from '../../../component/Buttons/CreateEpisodeFilmButton';
+import AddEpisodeForm from '../../../components/Forms/AddEpisodeForm/AddEpisodeForm';
+import CreateEpisodeFilmButton from '../../../components/Buttons/CreateEpisodeFilmButton';
 
 
 const AddEpisode = () => {

@@ -1,14 +1,11 @@
 import { Route, Routes } from 'react-router-dom'
 import './styles/App.css'
-// import './styles/marquee.css'
 import Home from './pages/Home/Home'
 import Main from './layouts/Main'
 import Verification from './pages/Verification/Verification'
-import Success from './components/ShowNotification/Success'
 import { useEffect } from 'react'
 import { notificationLocalStorage } from './api/localStorage'
 import { notify } from './utils/notify/notify'
-import LoginAgain from './components/LoginAgain/LoginAgain'
 import Profile from './pages/Profile/Profile'
 import PublicProfile from './pages/Setting/PublicProfile/PublicProfile'
 import PersonInfo from './pages/Setting/PersonInfo/PersonInfo'
@@ -20,6 +17,8 @@ import AddEpisode from './pages/Setting/AddEpisode/AddEpisode'
 import AddFilmAndSession from './pages/Setting/AddFilmAndSession/AddFilmAndSession'
 import Notification from './pages/Notofication/Notification'
 import Setting from './layouts/Setting'
+import Success from './components/Elements/ShowNotification/Success'
+import LoginAgainModal from './components/Modals/LoginAgainModal/LoginAgainModal'
 
 function App() {
   
@@ -55,7 +54,7 @@ function App() {
       {/* NOTIFICATION */}
       </Routes>
       <Success/>
-      <LoginAgain />
+      <LoginAgainModal />
     </>
   )
 }

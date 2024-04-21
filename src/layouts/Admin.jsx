@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { userSer } from '../api/api'
 import { notify } from '../utils/notify/notify'
 import { notificationLocalStorage } from '../api/localStorage'
-import { useSelector } from 'react-redux'
 import { setIsAdmin } from '../redux/userSlice'
 
 const Admin = ({children}) => {

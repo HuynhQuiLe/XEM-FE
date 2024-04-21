@@ -1,6 +1,6 @@
 import React from 'react'
-import SmallLogo from '../Logo/SmallLogo'
 import {useLocation} from 'react-router-dom';
+import SmallLogo from '../Logos/SmallLogo';
 
 const Footer = () => {
     const {pathname} = useLocation()
